@@ -92,6 +92,7 @@ const SecondSectionContentDiv = styled.div`
 	justify-content: space-between;
 	height: 60px;
 	width: 80%;
+	z-index: 10;
 
 	@media screen and (max-width: 1100px) {
 		flex-wrap: wrap;
