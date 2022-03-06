@@ -4,6 +4,7 @@ import piggyBank from "../../assets/piggyBank.svg";
 import savingsPlanGirl from "../../assets/savingsPlanGirl.svg";
 import femaleFarmer from "../../assets/femaleFarmer.svg";
 import inviteGirlsToHervest from "../../assets/inviteGirlsToHervest.svg";
+import chevron from "../../assets/chevron.svg";
 
 export const Body = () => {
 	return (
@@ -12,7 +13,7 @@ export const Body = () => {
 				<HeaderTitle>Watch your plans</HeaderTitle>
 				<HeaderSubTitle>A goal without a plan is just a wish</HeaderSubTitle>
 			</div>
-			<SavingsCardSection>
+			<SavingsCardSection className="relative">
 				<SavingsCard>
 					<SavingsCardTitleDiv>
 						<SavingsCardIconDiv>
@@ -63,6 +64,9 @@ export const Body = () => {
 							ratione debitis sunt sapiente nisi quod.
 						</HiddenP>
 					</SavingsCardBody>
+					<ChevronDiv>
+						<img src={chevron} alt="chevron" />
+					</ChevronDiv>
 				</SavingsCard>
 			</SavingsCardSection>
 			<PlansSection>
@@ -100,6 +104,10 @@ export const Body = () => {
 
 const Wrapper = styled.div`
 	margin-top: 6%;
+
+	.relative {
+		position: relative;
+	}
 
 	/* width */
 	.saving-card-body::-webkit-scrollbar {
@@ -261,9 +269,9 @@ const PlansImg = styled.img`
 	right: ${({ stage }) => (stage === 2 ? "2%" : stage === 3 ? 0 : "")};
 	top: ${({ stage }) => (stage === 2 ? "22%" : "")};
 
-    @media screen and (max-width: 922px) {
-        width: 50%;
-    }
+	@media screen and (max-width: 922px) {
+		width: 50%;
+	}
 `;
 
 const BtnAndShare = styled.div`
@@ -293,4 +301,25 @@ const Share = styled.p`
 	line-height: 18px;
 	color: #265859;
 	margin-left: 10%;
+`;
+
+const ChevronDiv = styled.div`
+	position: absolute;
+	background: #ffffff;
+	box-shadow: 0px 4px 24px #e8f1fd;
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	right: -2%;
+	top: 35%;
+
+	img {
+		margin-top: 20%;
+		width: 60%;
+		margin-left: 20%;
+	}
+
+	@media screen and (max-width: 1100px) {
+		display: none;
+	}
 `;
